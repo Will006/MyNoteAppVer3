@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <Button
+        android:id="@+id/new_folder_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:text="@string/button_add_folder"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        />
+
+    <Button
+        android:id="@+id/new_note_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:text="@string/button_add_note"
+        android:textColor="#000000"
+        android:textSize="30sp"/>
+
+    <Button
+        android:id="@+id/new_list_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:text="@string/button_add_list"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:checkable="true"/>
+</LinearLayout>

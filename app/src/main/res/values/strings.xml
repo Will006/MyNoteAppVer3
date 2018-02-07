@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MyNoteAppVer3</string>
+
+
+    <string name="button_add_folder">Add Folder</string>
+    <string name="button_add_note">Add Note</string>
+    <string name="button_add_list">Add List</string>
+    <string name="context">Context:</string>
+    <string name="title">Title:</string>
+</resources>
