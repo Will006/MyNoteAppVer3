@@ -22,7 +22,6 @@ public class popupNewFolder extends Activity
 {
     private String fileName = "";
     private EditText etFileName;
-    private Context contextTemp;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -53,7 +52,7 @@ public class popupNewFolder extends Activity
             public void onClick(View view)
             {
                 fileName=etFileName.getText().toString();
-                //if(Utilities.makeDir(popupNewFolder.this,fileName))
+                if(Utilities.makeDir(getApplicationContext(),fileName))
                 {
                     finish();
                 }

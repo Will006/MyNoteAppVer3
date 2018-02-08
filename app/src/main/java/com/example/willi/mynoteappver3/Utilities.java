@@ -25,7 +25,7 @@ public class Utilities
     //private static final String dirStr = "NotesFolder/";
     private static final String FILE_EXTENSION = ".dat";
 
-    public boolean makeDir(Context contextIn, String fileNameIn)
+    public static boolean makeDir(Context contextIn, String fileNameIn)
     {
 
         boolean tempBool=false;
@@ -47,11 +47,11 @@ public class Utilities
                 //File rootFile = new File(Environment.getDataDirectory())
                 //adds the needed / for the dir
 
-                fileNameIn="/"+fileNameIn;
-                File newFolder = new File(fileNameIn);
+                fileNameIn=fileNameIn;
+                File newFolder = new File(contextIn.getFilesDir(),fileNameIn);
                 if(newFolder.mkdirs())
                 {
-                    Toast.makeText(contextIn,"Dir " + fileNameIn + "created",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(contextIn,"Dir " + newFolder + " created",Toast.LENGTH_SHORT).show();
                     tempBool = true;
                 }
                 else
@@ -161,7 +161,7 @@ public class Utilities
             }
             else if(tempFile.exists() && tempFile.isDirectory())
             {
-                Toast.makeText(contextIn, "Folder "+ fileStr + " Found", Toast.LENGTH_SHORT).show();
+                Toast.makeText(contextIn, "Folder "+ fileStr + " Found", Toast.LENGTH_LONG).show();
             }
         }
 

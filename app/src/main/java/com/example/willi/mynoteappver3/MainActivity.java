@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     //Accessing the file strings
     static String getFileStr() {return dirStr;}
     static String getFileType() {return fileType;}
-
+    private static final String mainFileStr="NotesWithFolders";
     //Will populate to delete a group of Notes
     private ArrayList<String> filesToDelete = new ArrayList<String>();
 
@@ -49,13 +50,38 @@ public class MainActivity extends AppCompatActivity {
     private static final int MENU_DELETE = Menu.FIRST + 1;
     private boolean enableDelete = false;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mListViewNotes = (ListView)findViewById(R.id.notes_List);
         enableDelete = false;
+
+        File mainFolder = new File(getApplicationContext().getFilesDir(), mainFileStr);
+        boolean success = true;
+
+        if(!mainFolder.exists())
+        {
+            success=mainFolder.mkdir();
+            if(success)
+            {
+                Toast.makeText(this,mainFolder.toString()+" was made",Toast.LENGTH_LONG).show();
+            }
+            else
+            {
+                Toast.makeText(this,mainFolder.toString()+" was not made",Toast.LENGTH_LONG).show();
+            }
+
+        }
+        else if(success)
+        {
+            Toast.makeText(this,mainFolder.toString()+"already exsist",Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Toast.makeText(this,mainFolder.toString()+"does not already exsist",Toast.LENGTH_LONG).show();
+        }
+
         //localDir=getFilesDir()
     }
 
